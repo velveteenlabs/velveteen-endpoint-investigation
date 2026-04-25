@@ -1,5 +1,7 @@
 # Velveteen Endpoint Investigation
 
+> Entry-level cybersecurity analyst project focused on endpoint threat detection, persistence analysis, and behavioral investigation.
+
 ## Overview
 
 This project presents a structured investigation of suspicious endpoint activity involving persistence, script-based execution, and external communication.
