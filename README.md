@@ -2,17 +2,27 @@
 
 ## Overview
 
-This project demonstrates a structured investigation of suspicious endpoint activity involving persistence, script-based execution, and external communication.
+This project presents a structured investigation of suspicious endpoint activity involving persistence, script-based execution, and external communication.
 
-The analysis was conducted using a custom-built threat hunting framework (Velveteen) and focuses on correlating technical indicators into a complete attack chain.
+The analysis was conducted using a custom-built threat hunting framework (**Velveteen**) and focuses on correlating technical indicators into a complete and coherent attack chain.
+
+---
+
+## What This Project Demonstrates
+
+* Identification of persistence mechanisms (scheduled tasks)
+* Analysis of PowerShell-based execution techniques
+* Detection of suspicious file artifacts (DLL side-loading indicators)
+* Correlation of endpoint, file, and network activity
+* Translation of technical findings into structured intelligence reporting
 
 ---
 
 ## Key Findings
 
-* PowerShell execution using execution policy bypass
+* PowerShell execution using `ExecutionPolicy Bypass`
 * Persistence established via scheduled task (`WinReconService`)
-* Suspicious DLL artifacts consistent with side-loading
+* Suspicious DLL artifacts consistent with side-loading behavior
 * Outbound encrypted communication to flagged infrastructure
 
 These findings indicate coordinated activity rather than isolated anomalies.
@@ -43,15 +53,17 @@ Persistent Execution + External Communication
 
 ---
 
-## Approach
+## Investigation Approach
 
 The investigation followed a structured DFIR workflow:
 
-* Process and script analysis
-* Persistence identification
-* File artifact inspection
-* Network correlation
-* Behavioral interpretation
+1. Process and script analysis
+2. Persistence identification
+3. File artifact inspection
+4. Network activity correlation
+5. Behavioral interpretation
+
+This approach allowed individual signals to be connected into a full intrusion lifecycle.
 
 ---
 
@@ -59,28 +71,49 @@ The investigation followed a structured DFIR workflow:
 
 * PowerShell analysis
 * Log inspection
-* Persistence analysis (scheduled tasks)
-* YARA-based detection concepts
+* Persistence analysis (scheduled tasks, autoruns)
+* Indicator correlation
 * MITRE ATT&CK mapping
 
 ---
 
 ## MITRE ATT&CK Techniques
 
-* T1053.005 – Scheduled Task
-* T1086 – PowerShell
-* T1218.011 – DLL Side-Loading
-* T1071.001 – Web Protocols
+* **T1053.005** – Scheduled Task
+* **T1086** – PowerShell
+* **T1218.011** – DLL Side-Loading
+* **T1071.001** – Web Protocols
 
 ---
 
-## Project Focus
+## Additional Documentation
 
-This project emphasizes:
+* [Attack Chain Breakdown](attack_chain.md)
+* [Report Excerpt](report_excerpt.md)
+* [Velveteen Framework Overview](velveteen_overview.md)
 
-* Correlating multiple indicators into a single attack chain
-* Understanding attacker behavior beyond surface-level signals
-* Translating technical findings into structured analysis
+---
+
+## About Velveteen
+
+Velveteen is a modular endpoint detection and threat hunting framework designed to:
+
+* Identify suspicious system behavior
+* Analyze persistence mechanisms
+* Correlate activity across system layers
+* Support structured forensic investigation
+
+It combines elements of Endpoint Detection & Response (EDR), threat hunting workflows, and forensic analysis.
+
+---
+
+## Key Insight
+
+This project highlights that effective threat detection requires:
+
+* Correlation across multiple system layers
+* Understanding attacker behavior, not just indicators
+* Translating technical signals into a clear analytical narrative
 
 ---
 
