@@ -1,5 +1,3 @@
-# velveteen-endpoint-investigation
-
 # Velveteen Endpoint Investigation
 
 ## Overview
